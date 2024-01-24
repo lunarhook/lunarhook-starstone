@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09A724946F5C57F5D8D27CCB /* libPods-sixrandom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 889A3B0EEF9809CFDBE08E39 /* libPods-sixrandom.a */; };
+		09A724946F5C57F5D8D27CCB /* libPods-starstone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 889A3B0EEF9809CFDBE08E39 /* libPods-starstone.a */; };
 		0A1526CE27ABC9B80032E3AA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1526CD27ABC9B80032E3AA /* AVFoundation.framework */; };
 		0A1526D027ABC9C20032E3AA /* BackgroundTasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1526CF27ABC9C20032E3AA /* BackgroundTasks.framework */; };
 		0A1526D227ABC9CB0032E3AA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1526D127ABC9CB0032E3AA /* CoreTelephony.framework */; };
@@ -48,28 +48,28 @@
 		0A1526D527ABC9F10032E3AA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0A1526D727ABC9F90032E3AA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0A1526DA27ABCAF50032E3AA /* plumberIOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = plumberIOS.xcodeproj; path = ../plumber/plumberIOS.xcodeproj; sourceTree = "<group>"; };
-		0A1526E427ABCB270032E3AA /* plumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plumber.h; path = sixrandom/plumber.h; sourceTree = "<group>"; };
-		0A1526E527ABCB270032E3AA /* plumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = plumber.m; path = sixrandom/plumber.m; sourceTree = "<group>"; };
-		0A1526E727ABCB2D0032E3AA /* KeepBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeepBG.h; path = sixrandom/KeepBG.h; sourceTree = "<group>"; };
-		0A1526E827ABCB2D0032E3AA /* KeepBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeepBG.m; path = sixrandom/KeepBG.m; sourceTree = "<group>"; };
-		0A1526EA27ABCB390032E3AA /* SomethingJustLikeThis.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = SomethingJustLikeThis.mp3; path = sixrandom/SomethingJustLikeThis.mp3; sourceTree = "<group>"; };
-		0A1526EC27ABCB410032E3AA /* sixrandom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = sixrandom.entitlements; path = sixrandom/sixrandom.entitlements; sourceTree = "<group>"; };
+		0A1526E427ABCB270032E3AA /* plumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plumber.h; path = starstone/plumber.h; sourceTree = "<group>"; };
+		0A1526E527ABCB270032E3AA /* plumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = plumber.m; path = starstone/plumber.m; sourceTree = "<group>"; };
+		0A1526E727ABCB2D0032E3AA /* KeepBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeepBG.h; path = starstone/KeepBG.h; sourceTree = "<group>"; };
+		0A1526E827ABCB2D0032E3AA /* KeepBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeepBG.m; path = starstone/KeepBG.m; sourceTree = "<group>"; };
+		0A1526EA27ABCB390032E3AA /* SomethingJustLikeThis.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = SomethingJustLikeThis.mp3; path = starstone/SomethingJustLikeThis.mp3; sourceTree = "<group>"; };
+		0A1526EC27ABCB410032E3AA /* starstone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = starstone.entitlements; path = starstone/starstone.entitlements; sourceTree = "<group>"; };
 		0A1526F627ABD1840032E3AA /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		0A1526FA27ABD7B10032E3AA /* xxastro5.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = xxastro5.ttf; path = ../src/font/xxastro5.ttf; sourceTree = "<group>"; };
 		0A1526FB27ABD7C50032E3AA /* antoutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = antoutline.ttf; path = "../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; };
 		0A1526FC27ABD7C50032E3AA /* antfill.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = antfill.ttf; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; };
 		0AB682D5298829A2007F59CD /* icon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-1024.png"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* sixrandom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sixrandom.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = sixrandom/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = sixrandom/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = sixrandom/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = sixrandom/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = sixrandom/main.m; sourceTree = "<group>"; };
-		28F2F2991FC503F7FF8C3E52 /* Pods-sixrandom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sixrandom.debug.xcconfig"; path = "Target Support Files/Pods-sixrandom/Pods-sixrandom.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sixrandom/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		889A3B0EEF9809CFDBE08E39 /* libPods-sixrandom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sixrandom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* starstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = starstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = starstone/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = starstone/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = starstone/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = starstone/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = starstone/main.m; sourceTree = "<group>"; };
+		28F2F2991FC503F7FF8C3E52 /* Pods-starstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-starstone.debug.xcconfig"; path = "Target Support Files/Pods-starstone/Pods-starstone.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = starstone/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		889A3B0EEF9809CFDBE08E39 /* libPods-starstone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-starstone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99808666D5F544D39C95037F /* antfill.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = antfill.ttf; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; };
-		CD20A18D2E67FBDF51A31245 /* Pods-sixrandom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sixrandom.release.xcconfig"; path = "Target Support Files/Pods-sixrandom/Pods-sixrandom.release.xcconfig"; sourceTree = "<group>"; };
+		CD20A18D2E67FBDF51A31245 /* Pods-starstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-starstone.release.xcconfig"; path = "Target Support Files/Pods-starstone/Pods-starstone.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 				0A1526E127ABCB040032E3AA /* plumberIOS.framework in Frameworks */,
 				0A1526D427ABC9E80032E3AA /* libc++.tbd in Frameworks */,
 				0A1526CE27ABC9B80032E3AA /* AVFoundation.framework in Frameworks */,
-				09A724946F5C57F5D8D27CCB /* libPods-sixrandom.a in Frameworks */,
+				09A724946F5C57F5D8D27CCB /* libPods-starstone.a in Frameworks */,
 				0A1526D627ABC9F10032E3AA /* SystemConfiguration.framework in Frameworks */,
 				0A1526D027ABC9C20032E3AA /* BackgroundTasks.framework in Frameworks */,
 			);
@@ -110,11 +110,11 @@
 			name = resource;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* sixrandom */ = {
+		13B07FAE1A68108700A75B9A /* starstone */ = {
 			isa = PBXGroup;
 			children = (
 				0A1526F627ABD1840032E3AA /* main.jsbundle */,
-				0A1526EC27ABCB410032E3AA /* sixrandom.entitlements */,
+				0A1526EC27ABCB410032E3AA /* starstone.entitlements */,
 				0A1526EA27ABCB390032E3AA /* SomethingJustLikeThis.mp3 */,
 				0A1526E727ABCB2D0032E3AA /* KeepBG.h */,
 				0A1526E827ABCB2D0032E3AA /* KeepBG.m */,
@@ -128,7 +128,7 @@
 				0AB682D5298829A2007F59CD /* icon-1024.png */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = sixrandom;
+			name = starstone;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -141,7 +141,7 @@
 				0A1526CF27ABC9C20032E3AA /* BackgroundTasks.framework */,
 				0A1526CD27ABC9B80032E3AA /* AVFoundation.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				889A3B0EEF9809CFDBE08E39 /* libPods-sixrandom.a */,
+				889A3B0EEF9809CFDBE08E39 /* libPods-starstone.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1526F927ABD7960032E3AA /* resource */,
-				13B07FAE1A68108700A75B9A /* sixrandom */,
+				13B07FAE1A68108700A75B9A /* starstone */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
@@ -173,7 +173,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* sixrandom.app */,
+				13B07F961A680F5B00A75B9A /* starstone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 		D786517742B2B85EF52C62D5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				28F2F2991FC503F7FF8C3E52 /* Pods-sixrandom.debug.xcconfig */,
-				CD20A18D2E67FBDF51A31245 /* Pods-sixrandom.release.xcconfig */,
+				28F2F2991FC503F7FF8C3E52 /* Pods-starstone.debug.xcconfig */,
+				CD20A18D2E67FBDF51A31245 /* Pods-starstone.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -199,9 +199,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* sixrandom */ = {
+		13B07F861A680F5B00A75B9A /* starstone */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "sixrandom" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "starstone" */;
 			buildPhases = (
 				A57B158346D51493CDE9C7E9 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -216,9 +216,9 @@
 			);
 			dependencies = (
 			);
-			name = sixrandom;
-			productName = sixrandom;
-			productReference = 13B07F961A680F5B00A75B9A /* sixrandom.app */;
+			name = starstone;
+			productName = starstone;
+			productReference = 13B07F961A680F5B00A75B9A /* starstone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "sixrandom" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "starstone" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -253,7 +253,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* sixrandom */,
+				13B07F861A680F5B00A75B9A /* starstone */,
 			);
 		};
 /* End PBXProject section */
@@ -307,15 +307,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sixrandom/Pods-sixrandom-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-starstone/Pods-starstone-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sixrandom/Pods-sixrandom-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-starstone/Pods-starstone-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sixrandom/Pods-sixrandom-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-starstone/Pods-starstone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A57B158346D51493CDE9C7E9 /* [CP] Check Pods Manifest.lock */ = {
@@ -333,7 +333,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-sixrandom-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-starstone-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -346,15 +346,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sixrandom/Pods-sixrandom-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-starstone/Pods-starstone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sixrandom/Pods-sixrandom-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-starstone/Pods-starstone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sixrandom/Pods-sixrandom-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-starstone/Pods-starstone-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -395,11 +395,11 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28F2F2991FC503F7FF8C3E52 /* Pods-sixrandom.debug.xcconfig */;
+			baseConfigurationReference = 28F2F2991FC503F7FF8C3E52 /* Pods-starstone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JD2G9A573K;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
@@ -472,22 +472,22 @@
 					"\"$(PODS_TARGET_SRCROOT)/include/\"",
 					"$(SRCROOT)/../plumber/plumberIOS/Classes",
 				);
-				INFOPLIST_FILE = sixrandom/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "乾坤爻";
+				INFOPLIST_FILE = starstone/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "星罗坊";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.12;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sixrandom;
-				PRODUCT_NAME = sixrandom;
+				PRODUCT_BUNDLE_IDENTIFIER = starstone;
+				PRODUCT_NAME = starstone;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -496,11 +496,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD20A18D2E67FBDF51A31245 /* Pods-sixrandom.release.xcconfig */;
+			baseConfigurationReference = CD20A18D2E67FBDF51A31245 /* Pods-starstone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JD2G9A573K;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -571,22 +571,22 @@
 					"\"$(PODS_TARGET_SRCROOT)/include/\"",
 					"$(SRCROOT)/../plumber/plumberIOS/Classes",
 				);
-				INFOPLIST_FILE = sixrandom/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "乾坤爻";
+				INFOPLIST_FILE = starstone/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "星罗坊";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.12;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sixrandom;
-				PRODUCT_NAME = sixrandom;
+				PRODUCT_BUNDLE_IDENTIFIER = starstone;
+				PRODUCT_NAME = starstone;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -718,7 +718,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "sixrandom" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "starstone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -727,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "sixrandom" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "starstone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

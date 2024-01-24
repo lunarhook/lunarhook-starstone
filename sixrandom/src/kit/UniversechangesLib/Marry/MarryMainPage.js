@@ -9,7 +9,7 @@ import { captureRef } from "react-native-view-shot";
 import { Grid, Accordion, WhiteSpace, WingBlank, List, Icon } from '@ant-design/react-native';
 const Item = List.Item;
 import StorageModule from '../../../config/StorageModule'
-import { SixrandomModule } from '../SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../starstoneLib/starstoneModule'
 import EightrandomModule from '../EightrandomLib/EightrandomModule'
 import ScreenConfig from '../../../config/ScreenConfig';
 import { StyleConfig, FontStyleConfig } from '../../../config/StyleConfig';
@@ -206,7 +206,7 @@ class MarryMainPage extends React.Component {
         this.props.navigation.state.params.goback()
       }
 
-      //this.props.navigation.navigate("SixrandomHistoryPage",{ text: "refresh" })
+      //this.props.navigation.navigate("starstoneHistoryPage",{ text: "refresh" })
     })
   }
 
@@ -233,9 +233,9 @@ class MarryMainPage extends React.Component {
       gzmale.setSeconds(undefined != t[3] ? t[3] : t[3] = 0)
       info.birthmale = t[0] + " " + ("00" + t[1]).slice(-2) + ":" + ("00" + t[2]).slice(-2) + ":" + ("00" + t[3]).slice(-2)
       console.log(gzmale);
-      var EightDategzmale = SixrandomModule.lunar_f(gzmale)
+      var EightDategzmale = starstoneModule.lunar_f(gzmale)
       var gzDatemale = EightDategzmale.gzYear + " " + EightDategzmale.gzMonth + " " + EightDategzmale.gzDate + " " + EightDategzmale.gzTime;
-      var gzxkmale = SixrandomModule.get_empty_sixty_cycle(EightDategzmale.gzYear) + " " + SixrandomModule.get_empty_sixty_cycle(EightDategzmale.gzMonth) + " " + SixrandomModule.get_empty_sixty_cycle(EightDategzmale.gzDate) + " " + SixrandomModule.get_empty_sixty_cycle(EightDategzmale.gzTime);
+      var gzxkmale = starstoneModule.get_empty_sixty_cycle(EightDategzmale.gzYear) + " " + starstoneModule.get_empty_sixty_cycle(EightDategzmale.gzMonth) + " " + starstoneModule.get_empty_sixty_cycle(EightDategzmale.gzDate) + " " + starstoneModule.get_empty_sixty_cycle(EightDategzmale.gzTime);
 
       curyearmale = EightDategzmale.Year;
       curmonthmale = EightDategzmale.Month
@@ -255,9 +255,9 @@ class MarryMainPage extends React.Component {
       gzfemale.setSeconds(undefined != t[3] ? t[3] : t[3] = 0)
       info.birthfemale = t[0] + " " + ("00" + t[1]).slice(-2) + ":" + ("00" + t[2]).slice(-2) + ":" + ("00" + t[3]).slice(-2)
       console.log(gzfemale);
-      var EightDategzfemale = SixrandomModule.lunar_f(gzfemale)
+      var EightDategzfemale = starstoneModule.lunar_f(gzfemale)
       var gzDatefemale = EightDategzfemale.gzYear + " " + EightDategzfemale.gzMonth + " " + EightDategzfemale.gzDate + " " + EightDategzfemale.gzTime;
-      var gzxkfemale = SixrandomModule.get_empty_sixty_cycle(EightDategzfemale.gzYear) + " " + SixrandomModule.get_empty_sixty_cycle(EightDategzfemale.gzMonth) + " " + SixrandomModule.get_empty_sixty_cycle(EightDategzfemale.gzDate) + " " + SixrandomModule.get_empty_sixty_cycle(EightDategzfemale.gzTime);
+      var gzxkfemale = starstoneModule.get_empty_sixty_cycle(EightDategzfemale.gzYear) + " " + starstoneModule.get_empty_sixty_cycle(EightDategzfemale.gzMonth) + " " + starstoneModule.get_empty_sixty_cycle(EightDategzfemale.gzDate) + " " + starstoneModule.get_empty_sixty_cycle(EightDategzfemale.gzTime);
 
       curyearfemale = EightDategzfemale.Year;
       curmonthfemale = EightDategzfemale.Month
@@ -588,7 +588,7 @@ class MarryMainPage extends React.Component {
     }
 
     //根据小运计算干支
-    var eightyear = SixrandomModule.lunar_f(thisyear)
+    var eightyear = starstoneModule.lunar_f(thisyear)
     var gzYear = eightyear.gzYear
     //计算大运，流年，原句的所有冲克信息
     console.log("curluckyearmale", this.state.luckyyear, this.state.curluckyearnum)
@@ -608,7 +608,7 @@ class MarryMainPage extends React.Component {
     var birthdayyear = new Date()
     birthdayyear.setYear(curyearmale)
     birthdayyear.setMonth(curmonthmale)
-    birthdayyear = SixrandomModule.lunar_f(birthdayyear)
+    birthdayyear = starstoneModule.lunar_f(birthdayyear)
     birthdayyear = birthdayyear.gzYear + birthdayyear.gzMonth + birthdayyear.gzDate + birthdayyear.gzTime;
     console.log("birthdayyear", birthdayyear, curyearmale, curmonthmale)
     minluckyyear = EightrandomModule.getminlucky(birthdayyear, "乾造", curyearmale);

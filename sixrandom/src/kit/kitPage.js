@@ -23,7 +23,7 @@ if (w > 320 && Platform.OS === 'ios') {
 }
 var datalist = []
 datalist["周易乾坤"] = [
-  { icon: RouteConfig['SixrandomNewPage'].icon, text: RouteConfig['SixrandomNewPage'].name, url: RouteConfig['SixrandomNewPage'].route },
+  { icon: RouteConfig['starstoneNewPage'].icon, text: RouteConfig['starstoneNewPage'].name, url: RouteConfig['starstoneNewPage'].route },
   { icon: RouteConfig['EightrandomNewPage'].icon, text: RouteConfig['EightrandomNewPage'].name, url: RouteConfig['EightrandomNewPage'].route },
   { icon: RouteConfig['NumberMainPage'].icon, text: RouteConfig['NumberMainPage'].name, url: RouteConfig['NumberMainPage'].route },
 ]

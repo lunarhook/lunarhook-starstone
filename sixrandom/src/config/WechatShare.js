@@ -318,7 +318,7 @@ class WechatShare extends React.Component {
     })
   }
   saveImg(img,sw,ds,rthis) {
-    CameraRoll.save(img, 'photo', "sixrandom").then(result => {
+    CameraRoll.save(img, 'photo', "starstone").then(result => {
       this.share(img, sw, ds).then(v => {
         console.log("this.share", v, sw)
         if ("" != sw) {

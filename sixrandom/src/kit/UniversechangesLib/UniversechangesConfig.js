@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 import {StyleSheet,View, Text,ScrollView,TouchableOpacity,RefreshControl} from 'react-native';
-import {SixrandomModule} from './SixrandomLib/SixrandomModule'
+import {starstoneModule} from './starstoneLib/starstoneModule'
 import EightrandomModule from './EightrandomLib/EightrandomModule'
 
 var NKyuusei = new Array(-1,-1,-1);
@@ -356,8 +356,8 @@ class UniversechangesConfig extends React.Component {
       info.push(Gan2[ddgan]);
       info.push(Zhi2[ddzhi]);
 
-      var firstNode = SixrandomModule.getTerm(numYY*1,numDD*2-1)
-      var secondNode = SixrandomModule.getTerm(numYY*1,numDD*2)
+      var firstNode = starstoneModule.getTerm(numYY*1,numDD*2-1)
+      var secondNode = starstoneModule.getTerm(numYY*1,numDD*2)
       if (numDD>firstNode-1)
       {
         numMM++;

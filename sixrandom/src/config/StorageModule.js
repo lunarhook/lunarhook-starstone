@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Storage from 'react-native-storage';
 //
-import {SixrandomModule} from '../kit/UniversechangesLib/SixrandomLib/SixrandomModule'
+import {starstoneModule} from '../kit/UniversechangesLib/starstoneLib/starstoneModule'
 import AsyncStorage from '@react-native-community/async-storage';
 import { array } from 'prop-types';
 
@@ -55,7 +55,7 @@ var StorageModule = new Storage({
 var MarryHistoryNameArray = []
 var PartnershipHistoryNameArray = []
 var EightRandomHistoryNameArray = []
-var SixrandomHistoryNameArray = []
+var starstoneHistoryNameArray = []
 var QimenHistoryNameArray = []
 var SixCourseHistoryNameArray = []
 var TaiyiHistoryNameArray = []
@@ -154,7 +154,7 @@ class HistoryArrayGroup extends React.Component {
 	}
 	async SyncFileGroupServer(){
 		var ret = new Array()
-		var list = new Array("sixrandom","eightrandom","taiyi","sixcourse","qimen","Partnership","Marry")
+		var list = new Array("starstone","eightrandom","taiyi","sixcourse","qimen","Partnership","Marry")
 		var ret = new Array()
 		console.log("SyncFileGroupServer begin")
 		for(var i in list){
@@ -177,7 +177,7 @@ class HistoryArrayGroup extends React.Component {
 		/*
 		ret =(async function(ret){
 			var ret = new Array()
-			await StorageModule.getAllDataForKey("sixrandom").then(ids => {
+			await StorageModule.getAllDataForKey("starstone").then(ids => {
 				for (i = 0; i < ids.length; i++) {
 					try {
 						console.log("SyncFileGroupServer",ids[i])
@@ -233,7 +233,7 @@ class HistoryArrayGroup extends React.Component {
 		this.ReloadMarryHistory()
 		this.ReloadPartnershipHistory()
 		this.ReloadEightRandomHistory()
-		this.ReloadSixrandomHistory()
+		this.ReloadstarstoneHistory()
 		this.ReloadQimenHistory()
 		this.ReloadSixCourseHistory()
 		this.ReloadTaiyiHistory()
@@ -266,10 +266,10 @@ class HistoryArrayGroup extends React.Component {
 		return EightRandomHistoryNameArray;
 
 	}
-	async GetSixrandomHistory() {
-		await this.ReloadSixrandomHistory()
-		//console.log("GetSixrandomHistory", SixrandomHistoryNameArray[0])
-		return SixrandomHistoryNameArray;
+	async GetstarstoneHistory() {
+		await this.ReloadstarstoneHistory()
+		//console.log("GetstarstoneHistory", starstoneHistoryNameArray[0])
+		return starstoneHistoryNameArray;
 
 	}
 	async GetQimenHistory() {
@@ -309,7 +309,7 @@ class HistoryArrayGroup extends React.Component {
 		await this.GetMarryHistory()
 		await this.GetPartnershipHistory()
 		await this.GetEightRandomHistory()
-		await this.GetSixrandomHistory()
+		await this.GetstarstoneHistory()
 		await this.GetQimenHistory() 
 		await this.GetSixCourseHistory()
 		await this.GetTaiyiHistory()
@@ -365,7 +365,7 @@ class HistoryArrayGroup extends React.Component {
 					{
 						var Jobj = JSON.parse(ids[i]);
 						var date = new Date(Number(Jobj.id))
-						var taiyiDate = SixrandomModule.lunar_f(Jobj.date)
+						var taiyiDate = starstoneModule.lunar_f(Jobj.date)
 						var obj = {
 							name: date.toLocaleDateString() + " " + taiyiDate.gzYear+taiyiDate.gzMonth +taiyiDate.gzDate +taiyiDate.gzTime,
 							ret: taiyiDate.gzYear+taiyiDate.gzMonth +taiyiDate.gzDate +taiyiDate.gzTime,
@@ -472,7 +472,7 @@ class HistoryArrayGroup extends React.Component {
 					{
 						var Jobj = JSON.parse(ids[i]);
 						var date = new Date(Number(Jobj.id))
-						var sixcourseDate = SixrandomModule.lunar_f(Jobj.date)
+						var sixcourseDate = starstoneModule.lunar_f(Jobj.date)
 						var obj = {
 							name: date.toLocaleDateString() + " " + sixcourseDate.gzYear+sixcourseDate.gzMonth +sixcourseDate.gzDate +sixcourseDate.gzTime,
 							time: Jobj.id,
@@ -519,7 +519,7 @@ class HistoryArrayGroup extends React.Component {
 						}
 						QimenHistoryNameArray[i] = obj
 												/*
-						这里根据数据升级格式，需要和sixrandomnewpage的生产数据做比较，统一格式
+						这里根据数据升级格式，需要和starstonenewpage的生产数据做比较，统一格式
 						如果格式不统一，则出现重要问题
 						*/
 						var Jobj = {}
@@ -539,7 +539,7 @@ class HistoryArrayGroup extends React.Component {
 					else{
 						var Jobj = JSON.parse(ids[i]);
 						var date = new Date(Number(Jobj.id))
-						var qimenDate = SixrandomModule.lunar_f(Jobj.date)
+						var qimenDate = starstoneModule.lunar_f(Jobj.date)
 						var obj = {
 							name: date.toLocaleDateString() + " " + qimenDate.gzYear+qimenDate.gzMonth +qimenDate.gzDate +qimenDate.gzTime,
 							time: Jobj.id,
@@ -569,31 +569,31 @@ class HistoryArrayGroup extends React.Component {
 			}
 		});
 	}
-	async ReloadSixrandomHistory() {
-		SixrandomHistoryNameArray = []
-		await StorageModule.getAllDataForKey("sixrandom").then(async(ids) => {
+	async ReloadstarstoneHistory() {
+		starstoneHistoryNameArray = []
+		await StorageModule.getAllDataForKey("starstone").then(async(ids) => {
 			for (i = 0; i < ids.length; i++) {
 				try {
 					var Jobj = JSON.parse(ids[i]);
-					var result = SixrandomModule.get_sixrandom_name(Jobj.lunar)
+					var result = starstoneModule.get_starstone_name(Jobj.lunar)
 					var timedate = new Date(Number(Jobj.date))
 					var obj = {
 						name: "求测：" + Jobj.question,
-						ret: SixrandomModule.get_sixrandom_name(Jobj.lunar),
+						ret: starstoneModule.get_starstone_name(Jobj.lunar),
 						tip: Jobj.tip,
-						title: SixrandomModule.get_sixrandom_name(Jobj.lunar),
+						title: starstoneModule.get_starstone_name(Jobj.lunar),
 						time: Jobj.id,
 						star: Jobj.star,
-						url: "?date=" + timedate + "&lunar=" + Jobj.lunar + "&question=" + Jobj.question + "&kind=sixrandom" + "&rowid=" + Jobj.id ,
+						url: "?date=" + timedate + "&lunar=" + Jobj.lunar + "&question=" + Jobj.question + "&kind=starstone" + "&rowid=" + Jobj.id ,
 						id: Jobj.date,
 					}
-					SixrandomHistoryNameArray[i] = obj
+					starstoneHistoryNameArray[i] = obj
 					/*
-					这里根据数据升级格式，需要和sixrandomnewpage的生产数据做比较，统一格式
+					这里根据数据升级格式，需要和starstonenewpage的生产数据做比较，统一格式
 					如果格式不统一，则出现重要问题
 					*/
 					Jobj.id = Jobj.date
-					Jobj.kind = "sixrandom"
+					Jobj.kind = "starstone"
 					Jobj.sync = undefined==Jobj.sync ? false:Jobj.sync
 					Jstr = JSON.stringify(Jobj)
 					let T = await this.loadid(Jobj.kind,Jobj.id)
@@ -602,18 +602,18 @@ class HistoryArrayGroup extends React.Component {
 					}
 
 				} catch (error) {
-					SixrandomHistoryNameArray[i] = undefined
+					starstoneHistoryNameArray[i] = undefined
 				}
 			}
-			SixrandomHistoryNameArray.reverse()
-			for (var i = 0, len = SixrandomHistoryNameArray.length; i < len; i++) {
-				if (undefined == SixrandomHistoryNameArray[i]) {
-					SixrandomHistoryNameArray.splice(i, 1);
+			starstoneHistoryNameArray.reverse()
+			for (var i = 0, len = starstoneHistoryNameArray.length; i < len; i++) {
+				if (undefined == starstoneHistoryNameArray[i]) {
+					starstoneHistoryNameArray.splice(i, 1);
 					len--;
 					i--;
 				}
 			}
-			//console.log("ReloadSixrandomHistory", SixrandomHistoryNameArray[0])
+			//console.log("ReloadstarstoneHistory", starstoneHistoryNameArray[0])
 		});
 	}
 
@@ -664,7 +664,7 @@ class HistoryArrayGroup extends React.Component {
 						objx.sync = false
 						var Jstr = JSON.stringify(objx)
 						let T = await this.loadid(objx.kind,objx.id)
-						//这里逻辑和sixrandom不同，是从name里读数据装入eightrandom然后服务器同步以后，返回删除name
+						//这里逻辑和starstone不同，是从name里读数据装入eightrandom然后服务器同步以后，返回删除name
 						if (undefined==T) {
 							await this.saveid(objx.kind ,objx.id,Jstr)
 						}

@@ -129,7 +129,7 @@ class NameModule extends React.Component {
             renderIcon={() => RouteConfig["ScreenImage"].icon}
             onPress={() => {
               this.setState({ shareimg: true }),
-              WechatShare.snapshot(this.refs['location'], "乾坤爻", this)
+              WechatShare.snapshot(this.refs['location'], "星罗坊", this)
             }}
             titleStyle={StyleConfig.menufont}>
           </TabNavigator.Item>

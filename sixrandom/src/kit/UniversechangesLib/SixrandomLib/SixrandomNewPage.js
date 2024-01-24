@@ -8,7 +8,7 @@ import RNShake from 'react-native-shake';
 import IconConfig from '../../../config/IconConfig'
 import {HistoryArrayGroup} from '../../../config/StorageModule'
 import ValueTypeModule from '../../../config/ValueTypeModule'
-import {SixrandomModule} from '../SixrandomLib/SixrandomModule'
+import {starstoneModule} from '../starstoneLib/starstoneModule'
 import ScreenConfig from '../../../config/ScreenConfig';
 import {StyleConfig,FontStyleConfig} from '../../../config/StyleConfig';
 import UserModule from '../../../config/UserModule'
@@ -28,7 +28,7 @@ const dataitem = [
 ];
 
 let subscription =null
-class SixrandomNewPage extends React.Component {
+class starstoneNewPage extends React.Component {
 
   constructor(porp) {
     
@@ -47,7 +47,7 @@ class SixrandomNewPage extends React.Component {
     const { navigate } = navigation;
     return{
       
-    title:  RouteConfig["SixrandomNewPage"].name,
+    title:  RouteConfig["starstoneNewPage"].name,
     }
     
   };
@@ -83,7 +83,7 @@ class SixrandomNewPage extends React.Component {
     console.log( RouteConfig["ActiveCurPage"])
     if(null==subscription){
       subscription = RNShake.addListener(() => {
-        if("SixrandomNewPage"== RouteConfig["ActiveCurPage"]){
+        if("starstoneNewPage"== RouteConfig["ActiveCurPage"]){
           this.random()
         }
       })
@@ -121,9 +121,9 @@ class SixrandomNewPage extends React.Component {
             titleStyle={StyleConfig.menufont}>
           </TabNavigator.Item>
           <TabNavigator.Item
-            title={RouteConfig["SixrandomHistoryPage"].name}
-            renderIcon={() => RouteConfig["SixrandomHistoryPage"].icon}
-            onPress={() => navigate(RouteConfig["SixrandomHistoryPage"].route)}
+            title={RouteConfig["starstoneHistoryPage"].name}
+            renderIcon={() => RouteConfig["starstoneHistoryPage"].icon}
+            onPress={() => navigate(RouteConfig["starstoneHistoryPage"].route)}
             titleStyle={StyleConfig.menufont}>
           </TabNavigator.Item>
         </TabNavigator>
@@ -142,25 +142,25 @@ class SixrandomNewPage extends React.Component {
 
       var x = new Array()
       if (t == 8) {
-        //x = SixrandomModule.getnegativedraw()
+        //x = starstoneModule.getnegativedraw()
         x.push(IconConfig.IconSixradomline)
         x.push(IconConfig.IconSixradomlblock)
         x.push(IconConfig.IconSixradomline)
       }
       else if (t == 6) {
-       // x = SixrandomModule.getnegativedraw()
+       // x = starstoneModule.getnegativedraw()
         x.push(IconConfig.IconSixradomline)
         x.push(IconConfig.IconSixradomlblock)
         x.push(IconConfig.IconSixradomline)
       }
       else if (t == 7) {
-       // x = SixrandomModule.getpositivedraw()
+       // x = starstoneModule.getpositivedraw()
         x.push(IconConfig.IconSixradomline)
         x.push(IconConfig.IconSixradomline)
         x.push(IconConfig.IconSixradomline)
       }
       else if (t == 9) {
-        //x = SixrandomModule.getpositivedraw()
+        //x = starstoneModule.getpositivedraw()
         x.push(IconConfig.IconSixradomline)
         x.push(IconConfig.IconSixradomline)
         x.push(IconConfig.IconSixradomline)
@@ -201,7 +201,7 @@ class SixrandomNewPage extends React.Component {
       obj.date = randArray[7]
       obj.lunar = lunar
       obj.question = ValueTypeModule[question]
-      obj.kind ="sixrandom"
+      obj.kind ="starstone"
       var parameter = "?date="+(new Date(Number(randArray[7])))+"&lunar="+lunar+"&question="+ obj.question + "&kind=" + obj.kind + "&rowid=" + obj.id
       var Jstr = JSON.stringify(obj)
       console.log("convertJsonSave",Jstr);
@@ -211,12 +211,12 @@ class SixrandomNewPage extends React.Component {
           Jstr = HistoryArrayGroup.MakeJsonSync(Jstr)
       }
       await HistoryArrayGroup.saveid(obj.kind ,obj.id,Jstr)
-      HistoryArrayGroup.save("sixrandomlast",Jstr)
-      HistoryArrayGroup.GetSixrandomHistory()
+      HistoryArrayGroup.save("starstonelast",Jstr)
+      HistoryArrayGroup.GetstarstoneHistory()
       //强制卸载监听
       //subscription.remove()
       //subscription=null;
-      this.props.navigation.navigate('SixrandomFullInfoPage',{"url":parameter})
+      this.props.navigation.navigate('starstoneFullInfoPage',{"url":parameter})
       this.picker(0)
     }
 
@@ -282,4 +282,4 @@ var styles = StyleSheet.create ({
     alignItems: 'center',
   },
 });
-module.exports=SixrandomNewPage;  
+module.exports=starstoneNewPage;  

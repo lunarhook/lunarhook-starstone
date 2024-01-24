@@ -127,7 +127,7 @@ class SloganShare extends React.Component {
             onPress={() => {  this.setState({ shareimg: true }), 
                               this.timer && clearInterval(this.timer), 
                               this.state.fadeInOpacity.stopAnimation(this.pause),
-                              WechatShare.snapshot(this.refs['location'], "乾坤爻", this) }}
+                              WechatShare.snapshot(this.refs['location'], "星罗坊", this) }}
             titleStyle={StyleConfig.menufont}>
           </TabNavigator.Item>
         </TabNavigator>

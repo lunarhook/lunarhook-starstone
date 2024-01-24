@@ -57,7 +57,7 @@ class PrivacyPage extends React.Component {
     Privacyment.push("a) 北京月昱科技有限公司帐号均有安全保护功能，请妥善保管您的用户名及密码信息。北京月昱科技有限公司将通过对用户密码进行加密等安全措施确保您的信息不丢失，不被滥用和变造。尽管有前述安全措施 ，但同时也请您注意在信息网络上不存在“完善的安全措施”。")
     Privacyment.push("b) 在使用北京月昱科技有限公司网络服务进行网上服务时，您不可避免的要向提供服务对或潜在的服务提供方方披露自己的个人信息，如联络方式或者邮政地址。请您妥善保护自己的个人信息，仅在必要的情形下向他人提供。如您发现自己的个人信息泄密，尤其是北京月昱科技有限公司用户名及密码发生泄露，请您立即联络北京月昱科技有限公司客服，以便北京月昱科技有限公司采取相应措施。")
     Privacyment.push("6. 开发者信息")
-    Privacyment.push("a) 乾坤爻版本归属北京月昱科技有限公司")
+    Privacyment.push("a) 星罗坊版本归属北京月昱科技有限公司")
     Privacyment.push("b) 业务邮件developer@lunarhook.com")
     Privacyment.push("7. 隐私申请权限说明")
     Privacyment.push("a) 允许应用自动拨打电话。")

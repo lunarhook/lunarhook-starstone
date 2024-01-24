@@ -5,7 +5,7 @@ import { StyleSheet, View, TouchableOpacity, Dimensions, Alert, Text, Animated, 
 import TabNavigator from '@lunarhook/react-native-tab-navigator';  
 
 import ValueTypeModule from '../../../config/ValueTypeModule'
-import { SixrandomModule } from '../SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../starstoneLib/starstoneModule'
 import IconConfig from '../../../config/IconConfig'
 import ScreenConfig from '../../../config/ScreenConfig';
 import { Card, Button, Modal, WingBlank, WhiteSpace, List, SwipeAction, SearchBar } from '@ant-design/react-native';
@@ -18,7 +18,7 @@ import { StyleConfig, FontStyleConfig } from '../../../config/StyleConfig';
 const { width, height } = Dimensions.get('window');
 let modalhandler = null;
 
-class SixrandomHistoryPage extends React.Component {
+class starstoneHistoryPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +34,7 @@ class SixrandomHistoryPage extends React.Component {
     const { navigate } = navigation;
 
     return {
-      title: RouteConfig["SixrandomHistoryPage"].name,
+      title: RouteConfig["starstoneHistoryPage"].name,
     };
   }
   /*
@@ -92,16 +92,16 @@ class SixrandomHistoryPage extends React.Component {
     this.timer && clearInterval(this.timer);
   }
   _starRow(rowData) {
-    HistoryArrayGroup.loadid('sixrandom', rowData.id).then(async (ret) => {
+    HistoryArrayGroup.loadid('starstone', rowData.id).then(async (ret) => {
       var Jobj = JSON.parse(ret);
       Jobj.star = true == Jobj.star ? false : true
       Jobj.sync = false
       ret = JSON.stringify(Jobj)
-      let T = await UserModule.SyncFileServer("sixrandom", rowData.id, ret)
+      let T = await UserModule.SyncFileServer("starstone", rowData.id, ret)
       if (undefined != T && 2000 == T.code) {
         ret = HistoryArrayGroup.MakeJsonSync(ret)
       }
-      await HistoryArrayGroup.saveid('sixrandom', rowData.id, ret)
+      await HistoryArrayGroup.saveid('starstone', rowData.id, ret)
       this.refreshlist();
     })
   }
@@ -119,17 +119,17 @@ class SixrandomHistoryPage extends React.Component {
   };
   _updateStorage(rowData, newtips) {
 
-    HistoryArrayGroup.loadid('sixrandom', rowData.id).then(async (ret) => {
+    HistoryArrayGroup.loadid('starstone', rowData.id).then(async (ret) => {
       var Jobj = JSON.parse(ret);
       Jobj.tip = newtips;
       Jobj.sync = false
       ret = JSON.stringify(Jobj)
-      let T = await UserModule.SyncFileServer("sixrandom", rowData.id, ret)
+      let T = await UserModule.SyncFileServer("starstone", rowData.id, ret)
       if (undefined != T && 2000 == T.code) {
         //测试同步代码，登陆检查会重新同步所有的
         ret = HistoryArrayGroup.MakeJsonSync(ret)
       }
-      await HistoryArrayGroup.saveid('sixrandom', rowData.id, ret)
+      await HistoryArrayGroup.saveid('starstone', rowData.id, ret)
       this.refreshlist();
     })
   }
@@ -145,19 +145,19 @@ class SixrandomHistoryPage extends React.Component {
     )
   }
   async _deletehistory(rowData) {
-    HistoryArrayGroup.loadid('sixrandom', rowData.id).then(async (ret) => {
+    HistoryArrayGroup.loadid('starstone', rowData.id).then(async (ret) => {
       var Jobj = JSON.parse(ret);
-      let T = await UserModule.SyncFileServer("sixrandom", rowData.id, "")
+      let T = await UserModule.SyncFileServer("starstone", rowData.id, "")
       if (undefined != T && 2000 == T.code) {
         T.data.forEach(async (element) => {
           filename = element.File
           if (-1 != filename.indexOf(String(rowData.id)) && true == element.Del) {
-            await HistoryArrayGroup.remove('sixrandom', rowData.id);
+            await HistoryArrayGroup.remove('starstone', rowData.id);
           }
         });
       }
       else {
-        await HistoryArrayGroup.remove('sixrandom', rowData.id);
+        await HistoryArrayGroup.remove('starstone', rowData.id);
       }
       this.Animaterefreshlist(rowData)
     })
@@ -175,7 +175,7 @@ class SixrandomHistoryPage extends React.Component {
 
   refreshlist() {
     //this.setState({isLoading: true});
-    HistoryArrayGroup.GetSixrandomHistory().then(ids => {
+    HistoryArrayGroup.GetstarstoneHistory().then(ids => {
       if (ids.length == 0) {
         ScreenConfig.DeviceToast("暂无历史数据")
         this.props.navigation.goBack()
@@ -188,7 +188,7 @@ class SixrandomHistoryPage extends React.Component {
 
   onSearch = (searchText) => {
     return new Promise((resolve, reject) => {
-      HistoryArrayGroup.GetSixrandomHistory().then(ids => {
+      HistoryArrayGroup.GetstarstoneHistory().then(ids => {
         var filterArray = []
         for (var i = 0, len = ids.length; i < len; i++) {
           console.log(searchText, ids[i].name);
@@ -203,7 +203,7 @@ class SixrandomHistoryPage extends React.Component {
   }
   onSearchCancel = () => {
     return new Promise((resolve, reject) => {
-      HistoryArrayGroup.GetSixrandomHistory().then(ids => {
+      HistoryArrayGroup.GetstarstoneHistory().then(ids => {
         this.setState({ dataSource: ids })
 
       })
@@ -285,7 +285,7 @@ class SixrandomHistoryPage extends React.Component {
                   }
                 }>
                   <Card style={{ width: width - 20, paddingLeft: 10 }}>
-                    <TouchableOpacity onPress={() => {navigate('SixrandomFullInfoPage', {"url":data.item.url,"goback":()=>this.gobackrefreshlist()})}}>
+                    <TouchableOpacity onPress={() => {navigate('starstoneFullInfoPage', {"url":data.item.url,"goback":()=>this.gobackrefreshlist()})}}>
                       <Card.Header
                         title={<Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14 }}>{data.item.ret}</Text>}
                         //thumbStyle={{ width: 30, height: 30 }}
@@ -429,4 +429,4 @@ var styles = StyleSheet.create({
 
   }
 });
-module.exports = SixrandomHistoryPage;  
+module.exports = starstoneHistoryPage;  

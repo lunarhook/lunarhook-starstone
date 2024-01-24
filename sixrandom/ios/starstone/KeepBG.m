@@ -1,6 +1,6 @@
 //
 //  KeepBG.m
-//  sixrandom
+//  starstone
 //
 //  Created by fan on 2020/8/3.
 //  Copyright © 2020 Facebook. All rights reserved.
@@ -18,7 +18,7 @@ static KeepBG *instance = nil;
 
 @end
 
-static NSString *const kBgTaskName = @"com.sixrandom.AppRunInBackground";
+static NSString *const kBgTaskName = @"com.starstone.AppRunInBackground";
 
 @implementation KeepBG
 BOOL needRunInBackground = false;
@@ -78,7 +78,7 @@ BOOL needRunInBackground = false;
 - (void)registerBgTask {
     
     if (@available(iOS 13.0, *)) {
-        BOOL registerFlag = [[BGTaskScheduler sharedScheduler] registerForTaskWithIdentifier:@"com.sixrandom.kRefreshTaskId" usingQueue:nil launchHandler:^(__kindof BGTask * _Nonnull task) {
+        BOOL registerFlag = [[BGTaskScheduler sharedScheduler] registerForTaskWithIdentifier:@"com.starstone.kRefreshTaskId" usingQueue:nil launchHandler:^(__kindof BGTask * _Nonnull task) {
             [self handleAppRefresh:task];
         }];
         if (registerFlag) {
@@ -91,7 +91,7 @@ BOOL needRunInBackground = false;
     }
     
     if (@available(iOS 13.0, *)) {
-        [[BGTaskScheduler sharedScheduler] registerForTaskWithIdentifier:@"com.sixrandom.kCleanTaskId" usingQueue:nil launchHandler:^(__kindof BGTask * _Nonnull task) {
+        [[BGTaskScheduler sharedScheduler] registerForTaskWithIdentifier:@"com.starstone.kCleanTaskId" usingQueue:nil launchHandler:^(__kindof BGTask * _Nonnull task) {
             [self handleAppRefresh:task];
         }];
     } else {
@@ -102,7 +102,7 @@ BOOL needRunInBackground = false;
 - (void)scheduleAppRefresh {
     
     if (@available(iOS 13.0, *)) {
-        BGAppRefreshTaskRequest *request = [[BGAppRefreshTaskRequest alloc] initWithIdentifier:@"com.sixrandom.kRefreshTaskId"];
+        BGAppRefreshTaskRequest *request = [[BGAppRefreshTaskRequest alloc] initWithIdentifier:@"com.starstone.kRefreshTaskId"];
         // 最早15分钟后启动后台任务请求
 #ifdef DEBUG
       request.earliestBeginDate = [NSDate dateWithTimeIntervalSinceNow:100];

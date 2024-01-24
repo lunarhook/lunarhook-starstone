@@ -13,9 +13,9 @@ import { DevTimeManager } from '../net/NetApi'
 
 var Agreement = new Array()
 Agreement.push("")
-Agreement.push("乾坤爻")
-Agreement.push("乾坤爻字体大小测试")
-Agreement.push("乾坤爻是以心理学、天文学，中国传统国学，玄学（古代以《周易》《老子》《庄子》三者合称三玄，与四书五经同列）为主依据的测评及解答学习产品")
+Agreement.push("星罗坊")
+Agreement.push("星罗坊字体大小测试")
+Agreement.push("星罗坊是以心理学、天文学，中国传统国学，玄学（古代以《周易》《老子》《庄子》三者合称三玄，与四书五经同列）为主依据的测评及解答学习产品")
 Agreement.push("")
 let MyFontConfigPagethis = undefined
 

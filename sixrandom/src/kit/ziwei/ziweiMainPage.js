@@ -17,7 +17,7 @@ import IconConfig from '../../config/IconConfig'
 import { HistoryArrayGroup } from '../../config/StorageModule'
 import UserModule from '../../config/UserModule'
 import EightrandomModule from '../UniversechangesLib/EightrandomLib/EightrandomModule'
-import { SixrandomModule } from '../UniversechangesLib/SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../UniversechangesLib/starstoneLib/starstoneModule'
 const { width, height } = Dimensions.get('window');
 //if("android"===Platform.OS)
 
@@ -92,7 +92,7 @@ class ziweiMainPage extends React.Component {
         this.props.navigation.state.params.goback()
       }
 
-      //this.props.navigation.navigate("SixrandomHistoryPage",{ text: "refresh" })
+      //this.props.navigation.navigate("starstoneHistoryPage",{ text: "refresh" })
     })
   }
 
@@ -176,7 +176,7 @@ class ziweiMainPage extends React.Component {
 
       var t = info.birth.split(" ");
       var gz = new Date(t[0]);
-      var EightDate = SixrandomModule.lunar_f(gz)
+      var EightDate = starstoneModule.lunar_f(gz)
       var retterm = EightrandomModule.getYearTerm(gz.getFullYear())
       var beginlucky = EightrandomModule.getbigluckyearbegin(retterm, gz, ziweiEightDate, info.sex);
       var ju = ziweRet.ju.split(" ")
@@ -319,7 +319,7 @@ class ziweiMainPage extends React.Component {
       var thisyear = new Date()//这里应该选小运的年份
       if(0!=this.state.curminiluckyearnum)
       {thisyear.setFullYear(this.state.curminiluckyearnum)}
-      var eightyear = SixrandomModule.lunar_f(thisyear)
+      var eightyear = starstoneModule.lunar_f(thisyear)
       var years = new Array()
       years = this.state.luckyearrelation.concat(this.state.luckyyear, this.state.luckyyearposition)
       var minluckyyear = new Array()
@@ -327,7 +327,7 @@ class ziweiMainPage extends React.Component {
 
       birthdayyear.setYear(this.state.curyear)
       birthdayyear.setMonth(this.state.curmonth)
-      birthdayyear = SixrandomModule.lunar_f(birthdayyear)
+      birthdayyear = starstoneModule.lunar_f(birthdayyear)
       birthdayyear = birthdayyear.gzYear + birthdayyear.gzMonth + birthdayyear.gzDate + birthdayyear.gzTime;
       minluckyyear = EightrandomModule.getminlucky(birthdayyear, this.state.sex, this.state.curyear);
 

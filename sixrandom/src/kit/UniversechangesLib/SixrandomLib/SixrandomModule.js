@@ -3807,7 +3807,7 @@ var c = {
                                       日期计算 
 *****************************************************************************/
 
-class SixrandomModule extends React.Component {
+class starstoneModule extends React.Component {
 
 	getTerm(y, n) {
 		return c.getTerm(y, n)
@@ -4376,7 +4376,7 @@ class SixrandomModule extends React.Component {
 		infoext.push("")
 		return { _build, infobase, infogrid, infoext }
 	}
-	get_sixrandom_name(lunar) {
+	get_starstone_name(lunar) {
 		var x = ""
 		for (index = 0; index < 6; index++) {
 			var t = lunar[index]
@@ -4498,5 +4498,5 @@ class SixrandomModule extends React.Component {
 	}
 }
 
-var sixrandommodule = new SixrandomModule()
-module.exports = {SixrandomModule:sixrandommodule,six_random_NaJia:six_random_NaJia  }
+var starstonemodule = new starstoneModule()
+module.exports = {starstoneModule:starstonemodule,six_random_NaJia:six_random_NaJia  }

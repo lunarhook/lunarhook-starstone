@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 import {AppRegistry,View,Text} from 'react-native';
-import {six_random_NaJia} from '../../kit/UniversechangesLib/SixrandomLib/SixrandomModule'
+import {six_random_NaJia} from '../../kit/UniversechangesLib/starstoneLib/starstoneModule'
 
 var UniversBookPageModule = new Array()
 var UniversBookPageModule = new Array()

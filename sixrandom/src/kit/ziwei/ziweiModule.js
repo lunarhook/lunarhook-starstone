@@ -1,7 +1,7 @@
 
 
 import React, { Component } from 'react';
-import { SixrandomModule } from '../UniversechangesLib/SixrandomLib/SixrandomModule';
+import { starstoneModule } from '../UniversechangesLib/starstoneLib/starstoneModule';
 class ziweiModule extends React.Component {
 
 	constructor(porp) {
@@ -1199,7 +1199,7 @@ class ziweiModule extends React.Component {
 	calc(myDate, sex) {
 		this.init()
 		var i, j;
-		var EightDate = SixrandomModule.lunar_f(myDate)
+		var EightDate = starstoneModule.lunar_f(myDate)
 		this.iday = EightDate.lunarDate
 		this.imonth = EightDate.lunarMonth
 		this.niangz = EightDate.lunargzYear

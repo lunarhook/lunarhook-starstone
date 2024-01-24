@@ -1,4 +1,4 @@
-package com.sixrandom;
+package com.starstone;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactInstanceManager;
@@ -20,7 +20,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "sixrandom";
+    return "starstone";
   }
 
   private ReactInstanceManager mReactInstanceManager;

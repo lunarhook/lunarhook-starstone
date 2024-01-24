@@ -19,7 +19,7 @@ import {
 } from '@ant-design/react-native';
 const Item = List.Item;
 import StorageModule from '../../../config/StorageModule';
-import {SixrandomModule} from '../SixrandomLib/SixrandomModule';
+import {starstoneModule} from '../starstoneLib/starstoneModule';
 import EightrandomModule from './EightrandomModule';
 import {StyleConfig, FontStyleConfig} from '../../../config/StyleConfig';
 import WechatShare from '../../../config/WechatShare';
@@ -174,7 +174,7 @@ class EightrandomMainPage extends React.Component {
         this.props.navigation.state.params.goback();
       }
 
-      //this.props.navigation.navigate("SixrandomHistoryPage",{ text: "refresh" })
+      //this.props.navigation.navigate("starstoneHistoryPage",{ text: "refresh" })
     });
   }
 
@@ -212,7 +212,7 @@ class EightrandomMainPage extends React.Component {
         ':' +
         ('00' + t[3]).slice(-2);
       console.log(gz);
-      var EightDate = SixrandomModule.lunar_f(gz);
+      var EightDate = starstoneModule.lunar_f(gz);
       var gzDate =
         EightDate.gzYear +
         ' ' +
@@ -222,13 +222,13 @@ class EightrandomMainPage extends React.Component {
         ' ' +
         EightDate.gzTime;
       var gzxk =
-        SixrandomModule.get_empty_sixty_cycle(EightDate.gzYear) +
+        starstoneModule.get_empty_sixty_cycle(EightDate.gzYear) +
         ' ' +
-        SixrandomModule.get_empty_sixty_cycle(EightDate.gzMonth) +
+        starstoneModule.get_empty_sixty_cycle(EightDate.gzMonth) +
         ' ' +
-        SixrandomModule.get_empty_sixty_cycle(EightDate.gzDate) +
+        starstoneModule.get_empty_sixty_cycle(EightDate.gzDate) +
         ' ' +
-        SixrandomModule.get_empty_sixty_cycle(EightDate.gzTime);
+        starstoneModule.get_empty_sixty_cycle(EightDate.gzTime);
       curyear = EightDate.Year;
       curmonth = EightDate.Month;
 
@@ -752,7 +752,7 @@ class EightrandomMainPage extends React.Component {
     }
 
     //根据小运计算干支
-    var eightyear = SixrandomModule.lunar_f(thisyear);
+    var eightyear = starstoneModule.lunar_f(thisyear);
     var gzYear = eightyear.gzYear;
     //计算大运，流年，原句的所有冲克信息
     console.log('curluckyear', this.state.luckyyear, this.state.curluckyearnum);
@@ -774,7 +774,7 @@ class EightrandomMainPage extends React.Component {
     var birthdayyear = new Date();
     birthdayyear.setYear(curyear);
     birthdayyear.setMonth(curmonth);
-    birthdayyear = SixrandomModule.lunar_f(birthdayyear);
+    birthdayyear = starstoneModule.lunar_f(birthdayyear);
     birthdayyear =
       birthdayyear.gzYear +
       birthdayyear.gzMonth +

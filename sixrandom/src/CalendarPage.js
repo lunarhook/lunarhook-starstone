@@ -9,7 +9,7 @@ import ScreenConfig from './config/ScreenConfig';
 import { FontStyleConfig } from './config/StyleConfig';
 import WechatShare from './config/WechatShare'
 import NetModule from './net/NetModule'
-import { SixrandomModule } from './kit/UniversechangesLib/SixrandomLib/SixrandomModule'
+import { starstoneModule } from './kit/UniversechangesLib/starstoneLib/starstoneModule'
 import UniversechangesConfig from './kit/UniversechangesLib/UniversechangesConfig';
 import { WhiteSpace, Card, WingBlank } from '@ant-design/react-native'
 import { HistoryArrayGroup } from './config/StorageModule'
@@ -32,7 +32,7 @@ let CalendarPagethis = undefined
 class CalendarPage extends React.Component {
   constructor(props) {
     super(props);
-    var wanNianLiInfo = SixrandomModule.lunarsix();
+    var wanNianLiInfo = starstoneModule.lunarsix();
     var curtimelucky = wanNianLiInfo.info.gzTime
     var imgindex = imgtime[curtimelucky[1]]
     var day = new Date();
@@ -140,7 +140,7 @@ class CalendarPage extends React.Component {
 
   componentDidMount() {
     this.timer = setInterval(() => {
-      var wanNianLiInfo = SixrandomModule.lunarsix();
+      var wanNianLiInfo = starstoneModule.lunarsix();
       var timelucky = UniversechangesConfig.gettimelucky(wanNianLiInfo.info.gzDate)
       var curtimelucky = wanNianLiInfo.info.gzTime
       var imgindex = imgtime[curtimelucky[1]]
@@ -246,7 +246,7 @@ class CalendarPage extends React.Component {
         titleStyle={StyleConfig.menufont}>
       </TabNavigator.Item>)
 
-      if ("sixrandom" == keys) {
+      if ("starstone" == keys) {
         return (
           <TabNavigator tabBarStyle={{ height: ScreenConfig.getTabBarHeight(), backgroundColor: '#ffffff', }}>
             {kitPage}
@@ -422,7 +422,7 @@ class CalendarPage extends React.Component {
   today() {
     var now = new Date();
     var parameter = "?date=" + now.toString() + "&lunar=" + "999999" + "&question=";
-    this.state.wanNianLiInfo = SixrandomModule.build(parameter);
+    this.state.wanNianLiInfo = starstoneModule.build(parameter);
     this.state.info = UniversechangesConfig.GetInfo(this.state.wanNianLiInfo)
     var sday = this.getDateFormat(now);
     this.props.navigation.setParams({otherParam: false})
@@ -443,7 +443,7 @@ class CalendarPage extends React.Component {
     else {
       time.setHours(now.getHours());
       var parameter = "?date=" + time.toString() + "&lunar=" + "999999" + "&question=";
-      this.state.wanNianLiInfo = SixrandomModule.build(parameter);
+      this.state.wanNianLiInfo = starstoneModule.build(parameter);
       this.state.info = UniversechangesConfig.GetInfo(this.state.wanNianLiInfo)
       this.props.navigation.setParams({otherParam: true  })
       this.setState({

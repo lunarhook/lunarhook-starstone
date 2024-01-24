@@ -9,7 +9,7 @@ import { InputItem, DatePicker, List, Switch, WhiteSpace, Provider, PickerView }
 import { StorageModule, HistoryArrayGroup } from '../../../config/StorageModule'
 import ZoneTimeModule from '../../../config/ZoneTimeModule'
 import ValueTypeModule from '../../../config/ValueTypeModule'
-import { SixrandomModule } from '../SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../starstoneLib/starstoneModule'
 import RouteConfig from '../../../config/RouteConfig';
 import ScreenConfig from '../../../config/ScreenConfig';
 import { StyleConfig, FontStyleConfig } from '../../../config/StyleConfig';
@@ -292,7 +292,7 @@ class PartnershipNewPage extends React.Component {
       if (this.state.switchleapleader == true) {
         isleap = true;
       }
-      var Json_ret = SixrandomModule.lunar2solar(myDateleader.getFullYear(), myDateleader.getMonth() + 1, myDateleader.getDate(), isleap)
+      var Json_ret = starstoneModule.lunar2solar(myDateleader.getFullYear(), myDateleader.getMonth() + 1, myDateleader.getDate(), isleap)
       console.log("solar2lunar", Json_ret, myDateleader.getFullYear(), myDateleader.getMonth() + 1, myDateleader.getDate())
       Json_ret_Hours = myDateleader.getHours();
       Json_ret_Min = myDateleader.getMinutes();
@@ -301,7 +301,7 @@ class PartnershipNewPage extends React.Component {
       myDateleader.setMinutes(Json_ret_Min)
     }
 
-    var EightDateleader = SixrandomModule.lunar_f(myDateleader)
+    var EightDateleader = starstoneModule.lunar_f(myDateleader)
 
 
     var savedateleader = new Array()
@@ -326,7 +326,7 @@ class PartnershipNewPage extends React.Component {
       if (this.state.switchleapPartnership == true) {
         isleap = true;
       }
-      var Json_ret = SixrandomModule.lunar2solar(myDatePartnership.getFullYear(), myDatePartnership.getMonth() + 1, myDatePartnership.getDate(), isleap)
+      var Json_ret = starstoneModule.lunar2solar(myDatePartnership.getFullYear(), myDatePartnership.getMonth() + 1, myDatePartnership.getDate(), isleap)
       console.log("solar2lunar", Json_ret, myDatePartnership.getFullYear(), myDatePartnership.getMonth() + 1, myDatePartnership.getDate())
       Json_ret_Hours = myDatePartnership.getHours();
       Json_ret_Min = myDatePartnership.getMinutes();
@@ -335,7 +335,7 @@ class PartnershipNewPage extends React.Component {
       myDatePartnership.setMinutes(Json_ret_Min)
     }
 
-    var EightDatePartnership = SixrandomModule.lunar_f(myDatePartnership)
+    var EightDatePartnership = starstoneModule.lunar_f(myDatePartnership)
 
 
     var savedatePartnership = new Array()

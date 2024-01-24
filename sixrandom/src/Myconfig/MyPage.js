@@ -233,7 +233,7 @@ class MyPage extends React.Component {
           <View style={styles.container}>
             <WhiteSpace size="xl" />
             <View style={{ alignItems: "center" }}>
-              <Image source={require('../../img/sixrandom_qq100.jpg')} style={{ width: 50, height: 50, borderRadius: 10, justifyContent: "center" }} />
+              <Image source={require('../../img/starstone_qq100.jpg')} style={{ width: 50, height: 50, borderRadius: 10, justifyContent: "center" }} />
             </View>
             <WhiteSpace size="xl" />
             <Text style={{ textAlign: "center" }}>{mobile}</Text>

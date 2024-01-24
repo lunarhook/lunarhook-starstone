@@ -9,7 +9,7 @@ import { InputItem, DatePicker, List, Switch, WhiteSpace, Provider, PickerView }
 import { StorageModule, HistoryArrayGroup } from '../../../config/StorageModule'
 import ZoneTimeModule from '../../../config/ZoneTimeModule'
 import ValueTypeModule from '../../../config/ValueTypeModule'
-import { SixrandomModule } from '../SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../starstoneLib/starstoneModule'
 import RouteConfig from '../../../config/RouteConfig';
 import ScreenConfig from '../../../config/ScreenConfig';
 import { StyleConfig, FontStyleConfig } from '../../../config/StyleConfig';
@@ -277,7 +277,7 @@ class MarryNewPage extends React.Component {
       if (this.state.switchleapmale == true) {
         isleap = true;
       }
-      var Json_ret = SixrandomModule.lunar2solar(myDatemale.getFullYear(), myDatemale.getMonth() + 1, myDatemale.getDate(), isleap)
+      var Json_ret = starstoneModule.lunar2solar(myDatemale.getFullYear(), myDatemale.getMonth() + 1, myDatemale.getDate(), isleap)
       console.log("solar2lunar", Json_ret, myDatemale.getFullYear(), myDatemale.getMonth() + 1, myDatemale.getDate())
       Json_ret_Hours = myDatemale.getHours();
       Json_ret_Min = myDatemale.getMinutes();
@@ -286,7 +286,7 @@ class MarryNewPage extends React.Component {
       myDatemale.setMinutes(Json_ret_Min)
     }
 
-    var EightDatemale = SixrandomModule.lunar_f(myDatemale)
+    var EightDatemale = starstoneModule.lunar_f(myDatemale)
 
 
     var savedatemale = new Array()
@@ -311,7 +311,7 @@ class MarryNewPage extends React.Component {
       if (this.state.switchleapfemale == true) {
         isleap = true;
       }
-      var Json_ret = SixrandomModule.lunar2solar(myDatefemale.getFullYear(), myDatefemale.getMonth() + 1, myDatefemale.getDate(), isleap)
+      var Json_ret = starstoneModule.lunar2solar(myDatefemale.getFullYear(), myDatefemale.getMonth() + 1, myDatefemale.getDate(), isleap)
       console.log("solar2lunar", Json_ret, myDatefemale.getFullYear(), myDatefemale.getMonth() + 1, myDatefemale.getDate())
       Json_ret_Hours = myDatefemale.getHours();
       Json_ret_Min = myDatefemale.getMinutes();
@@ -320,7 +320,7 @@ class MarryNewPage extends React.Component {
       myDatefemale.setMinutes(Json_ret_Min)
     }
 
-    var EightDatefemale = SixrandomModule.lunar_f(myDatefemale)
+    var EightDatefemale = starstoneModule.lunar_f(myDatefemale)
 
 
     var savedatefemale = new Array()

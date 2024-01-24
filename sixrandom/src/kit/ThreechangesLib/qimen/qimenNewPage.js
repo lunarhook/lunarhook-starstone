@@ -9,7 +9,7 @@ import { TextareaItem, DatePicker, List, Switch, WhiteSpace, PickerView, Provide
 import { HistoryArrayGroup } from '../../../config/StorageModule'
 import ValueTypeModule from '../../../config/ValueTypeModule'
 import UserModule from '../../../config/UserModule'
-import { SixrandomModule } from '../../UniversechangesLib/SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../../UniversechangesLib/starstoneLib/starstoneModule'
 import RouteConfig from '../../../config/RouteConfig';
 import ScreenConfig from '../../../config/ScreenConfig';
 import { StyleConfig, FontStyleConfig } from '../../../config/StyleConfig';
@@ -171,12 +171,12 @@ class qimenNewPage extends React.Component {
       if (this.state.switchleap == true) {
         isleap = true;
       }
-      var Json_ret = SixrandomModule.lunar2solar(myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate(), isleap)
+      var Json_ret = starstoneModule.lunar2solar(myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate(), isleap)
       console.log("solar2lunar", Json_ret, myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate())
       myDate = Json_ret
     }
 
-    var SixCourseDate = SixrandomModule.lunar_f(myDate)
+    var SixCourseDate = starstoneModule.lunar_f(myDate)
 
     var index = (new Date()).valueOf().toString();
     var savedate = new Array()

@@ -9,7 +9,7 @@ import { InputItem, DatePicker, List, Switch, WhiteSpace, Provider, PickerView }
 import { StorageModule, HistoryArrayGroup } from '../../../config/StorageModule'
 import ZoneTimeModule from '../../../config/ZoneTimeModule'
 import ValueTypeModule from '../../../config/ValueTypeModule'
-import { SixrandomModule } from '../SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../starstoneLib/starstoneModule'
 import RouteConfig from '../../../config/RouteConfig';
 import ScreenConfig from '../../../config/ScreenConfig';
 import { StyleConfig, FontStyleConfig } from '../../../config/StyleConfig';
@@ -265,7 +265,7 @@ class EightrandomNewPage extends React.Component {
       if (this.state.switchleap == true) {
         isleap = true;
       }
-      var Json_ret = SixrandomModule.lunar2solar(myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate(), isleap)
+      var Json_ret = starstoneModule.lunar2solar(myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate(), isleap)
       console.log("solar2lunar", Json_ret, myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate())
       Json_ret_Hours = myDate.getHours();
       Json_ret_Min = myDate.getMinutes();
@@ -274,7 +274,7 @@ class EightrandomNewPage extends React.Component {
       myDate.setMinutes(Json_ret_Min)
     }
 
-    var EightDate = SixrandomModule.lunar_f(myDate)
+    var EightDate = starstoneModule.lunar_f(myDate)
 
     var index = (new Date()).valueOf().toString();
     var savedate = new Array()

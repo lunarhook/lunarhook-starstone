@@ -5,7 +5,7 @@ import RouteConfig from './config/RouteConfig'
 import { appinfo, appname } from './config/appinfo'
 import { Grid, Card, WhiteSpace, WingBlank, List } from '@ant-design/react-native';
 import sloganshow from './config/SloganModule'
-import {SixrandomModule} from './kit/UniversechangesLib/SixrandomLib/SixrandomModule'
+import {starstoneModule} from './kit/UniversechangesLib/starstoneLib/starstoneModule'
 import {FontStyleConfig} from './config/StyleConfig';
 var {height, width} = Dimensions.get('window')
 
@@ -59,7 +59,7 @@ class slogan extends React.Component {
     this.timer && clearInterval(this.timer);
   }
   render() {
-    var wanNianLiInfo = SixrandomModule.lunarsix();
+    var wanNianLiInfo = starstoneModule.lunarsix();
     var curtimelucky = wanNianLiInfo.info.gzTime
     var imgindex = this.imgtime[curtimelucky[1]]
     Animated.sequence([Animated.timing(this.state.fadeInOpacity, { toValue: 1, duration: 2000 ,useNativeDriver: true}), Animated.delay(1500), Animated.timing(this.state.fadeInOpacity, { toValue: 0, duration: 1000 ,useNativeDriver: true})]).start()

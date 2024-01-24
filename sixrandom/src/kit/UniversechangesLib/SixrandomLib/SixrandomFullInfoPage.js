@@ -6,7 +6,7 @@ import { findNodeHandle, Image, StyleSheet, View, Alert, Text, TouchableOpacity,
 import { captureRef } from "react-native-view-shot";
 import TabNavigator from '@lunarhook/react-native-tab-navigator';  
 import { Grid, Accordion, WhiteSpace, WingBlank, List } from '@ant-design/react-native';
-import { SixrandomModule } from '../SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../starstoneLib/starstoneModule'
 import StorageModule from '../../../config/StorageModule'
 import IconConfig from '../../../config/IconConfig';
 import { StyleConfig, FontStyleConfig } from '../../../config/StyleConfig';
@@ -15,8 +15,8 @@ import WechatShare from '../../../config/WechatShare'
 import { HistoryArrayGroup } from '../../../config/StorageModule'
 import ScreenConfig from '../../../config/ScreenConfig';
 
-let SixrandomFullinfoPagethis = null
-class SixrandomFullinfoPage extends React.Component {
+let starstoneFullinfoPagethis = null
+class starstoneFullinfoPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,19 +24,19 @@ class SixrandomFullinfoPage extends React.Component {
       parameter: 'null',
       infogrid: []
     }
-    SixrandomFullinfoPagethis = this
+    starstoneFullinfoPagethis = this
   };
 
   static navigationOptions = ({ navigation }) => {
     const { navigate } = navigation;
     return {
       // headerRight:(<Button title="分享" onPress={ () => ShareModule.Sharetotimeline() }/>),
-      title: RouteConfig["SixrandomFullInfoPage"].name,
+      title: RouteConfig["starstoneFullInfoPage"].name,
       headerRight: () => (
         <TouchableOpacity
           style={{ padding: 10, alignContent: "center", alignItems: "baseline" }}
           //onPress={() => navigate('Search')}
-          onPress={() =>  SixrandomFullinfoPagethis.deletethis()}
+          onPress={() =>  starstoneFullinfoPagethis.deletethis()}
         >
           {IconConfig.IconDelete}
         </TouchableOpacity>),
@@ -53,23 +53,23 @@ class SixrandomFullinfoPage extends React.Component {
   }
   async deletethis()
   {
-    var rowid = SixrandomFullinfoPagethis.state.rowid 
+    var rowid = starstoneFullinfoPagethis.state.rowid 
     console.log("rowid",rowid)
-    HistoryArrayGroup.loadid('sixrandom', rowid).then(async (ret) => {
+    HistoryArrayGroup.loadid('starstone', rowid).then(async (ret) => {
       if(undefined!=ret)
       {
         var Jobj = JSON.parse(ret);
-        let T = await UserModule.SyncFileServer("sixrandom", rowid, "")
+        let T = await UserModule.SyncFileServer("starstone", rowid, "")
         if (undefined != T && 2000 == T.code) {
           T.data.forEach(async (element) => {
             filename = element.File
             if (-1 != filename.indexOf(String(rowid)) && true == element.Del) {
-              await HistoryArrayGroup.remove('sixrandom', rowid);
+              await HistoryArrayGroup.remove('starstone', rowid);
             }
           });
         }
         else {
-          await HistoryArrayGroup.remove('sixrandom', rowid);
+          await HistoryArrayGroup.remove('starstone', rowid);
         }
       }
       //this.props.navigation.dispatch(CommonActions.goBack());
@@ -79,7 +79,7 @@ class SixrandomFullinfoPage extends React.Component {
         this.props.navigation.state.params.goback()
       }
 
-      //this.props.navigation.navigate("SixrandomHistoryPage",{ text: "refresh" })
+      //this.props.navigation.navigate("starstoneHistoryPage",{ text: "refresh" })
     })
   }
   componentWillUnmount() {
@@ -93,8 +93,8 @@ class SixrandomFullinfoPage extends React.Component {
     parameter = this.props.navigation.state.params.url
     //console.log("refreshlist()",parameter)
     if ("last" != parameter) {
-      var _ret = SixrandomModule.build(parameter);
-      var __ret = SixrandomModule.get_random_draw()
+      var _ret = starstoneModule.build(parameter);
+      var __ret = starstoneModule.get_random_draw()
       //console.log("ret2",__ret)
       var _build = __ret._build
       var infogrid = new Array()
@@ -109,13 +109,13 @@ class SixrandomFullinfoPage extends React.Component {
           var cur = ggrid[index]
           console.log(cur)
           o.myth = cur[0] + " " + cur[1];
-          o.sixrandom = cur[2];
+          o.starstone = cur[2];
           o.tip = cur[3]
           o.change = cur[4];
         }
         else {
           o.myth = "";
-          o.sixrandom = "";
+          o.starstone = "";
           o.tip = ""
           o.change = "";
         }
@@ -123,7 +123,7 @@ class SixrandomFullinfoPage extends React.Component {
         infogrid.push(o)
       }
       console.log(infogrid)
-      SixrandomFullinfoPagethis.setState({
+      starstoneFullinfoPagethis.setState({
         date: _build, parameter: parameter, infogrid: infogrid, infoext: infoext, infobase: infobase,kind:kind,rowid:rowid
       });
     }
@@ -139,9 +139,9 @@ class SixrandomFullinfoPage extends React.Component {
         }
         var question = randArray[0]
         var parameter = "?date=" + date + "&lunar=" + lunar + "&question=" + question
-        var _ret = SixrandomModule.build(parameter);
+        var _ret = starstoneModule.build(parameter);
         //console.log("ret1",_ret)
-        var __ret = SixrandomModule.get_random_draw()
+        var __ret = starstoneModule.get_random_draw()
         var _build = __ret._build
         var infogrid = new Array()
         var ggrid = __ret.infogrid
@@ -153,13 +153,13 @@ class SixrandomFullinfoPage extends React.Component {
             var cur = ggrid[index]
             console.log(cur)
             o.myth = cur[0] + " " + cur[1];
-            o.sixrandom = cur[2];
+            o.starstone = cur[2];
             o.tip = cur[3]
             o.change = cur[4];
           }
           else {
             o.myth = "";
-            o.sixrandom = "";
+            o.starstone = "";
             o.tip = ""
             o.change = "";
           }
@@ -274,7 +274,7 @@ class SixrandomFullinfoPage extends React.Component {
                       <View style={{ flexDirection: 'row', textAlign: 'left' }}>
                         <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/10,color:c }}>{dataItem.myth.substr(0,3)}</Text>
                         <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/5 }}>{dataItem.myth.substr(3)}</Text>
-                        <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/5 }}>{dataItem.sixrandom}</Text>
+                        <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/5 }}>{dataItem.starstone}</Text>
                         <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/6 }}>{dataItem.tip}</Text>
                         <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/3 }}>{dataItem.change}</Text>
                       </View>
@@ -283,14 +283,14 @@ class SixrandomFullinfoPage extends React.Component {
                   else {
                     var c = this.rendercolor(dataItem.myth.substr(0,3))
                     var f = this.rendercolor(dataItem.myth.substr(3))
-                    var g = this.rendercolor(dataItem.sixrandom.substr(0,5))
+                    var g = this.rendercolor(dataItem.starstone.substr(0,5))
                     var b = this.rendercolor(dataItem.change)
                     return (
                       <View style={{ flexDirection: 'row', textAlign: 'left' }}>
                         <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/10,color:c }}>{dataItem.myth.substr(0,3)}</Text>
                         <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/5,color:f }}>{dataItem.myth.substr(3)}</Text>
-                        <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/5,color:g }}>{dataItem.sixrandom.substr(0,5)}</Text>
-                        <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/6 }}>{dataItem.sixrandom.substr(5)}</Text>
+                        <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/5,color:g }}>{dataItem.starstone.substr(0,5)}</Text>
+                        <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/6 }}>{dataItem.starstone.substr(5)}</Text>
                         <Text style={{ fontSize: FontStyleConfig.getFontApplySize() + 14, width: rwidth/3 ,color:b}}>{dataItem.change}</Text>
                       </View>
                     )
@@ -316,7 +316,7 @@ class SixrandomFullinfoPage extends React.Component {
             <WhiteSpace size="xl" />
           </View>
         </ScrollView>
-        {WechatShare.shareRetBar(WechatShare, this,  RouteConfig["SixrandomFullInfoPage"].name)}
+        {WechatShare.shareRetBar(WechatShare, this,  RouteConfig["starstoneFullInfoPage"].name)}
       </View>
     )
   }
@@ -348,4 +348,4 @@ var styles = StyleSheet.create({
     //flexDirection: 'row',
   },
 });
-module.exports = SixrandomFullinfoPage;  
+module.exports = starstoneFullinfoPage;  

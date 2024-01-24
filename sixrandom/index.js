@@ -22,9 +22,9 @@ import SearchPage from './src/tools/SearchPage'
 
 import NightPage from './src/exploration/NightFireSide/NightPage'
 
-import SixrandomNewPage from './src/kit/UniversechangesLib/SixrandomLib/SixrandomNewPage';
-import SixrandomFullInfoPage from './src/kit/UniversechangesLib/SixrandomLib/SixrandomFullInfoPage'
-import SixrandomHistoryPage from './src/kit/UniversechangesLib/SixrandomLib/SixrandomHistoryPage';
+import starstoneNewPage from './src/kit/UniversechangesLib/starstoneLib/starstoneNewPage';
+import starstoneFullInfoPage from './src/kit/UniversechangesLib/starstoneLib/starstoneFullInfoPage'
+import starstoneHistoryPage from './src/kit/UniversechangesLib/starstoneLib/starstoneHistoryPage';
 import EightrandomNewPage from './src/kit/UniversechangesLib/EightrandomLib/EightrandomNewPage';
 import EightrandomMainPage from './src/kit/UniversechangesLib/EightrandomLib/EightrandomMainPage'
 import EightrandomHistoryPage from './src/kit/UniversechangesLib/EightrandomLib/EightrandomHistoryPage'
@@ -422,16 +422,16 @@ const MainPage = createBottomTabNavigator({
 )
 
 
-const sixrandom = createStackNavigator({
+const starstone = createStackNavigator({
 
   MainPage,
   NightPage: { screen:NightPage},
   Exploration,
   CalendarPage: { screen: CalendarPage },
   NumberMainPage: { screen: NumberMainPage },
-  SixrandomHistoryPage: { screen: SixrandomHistoryPage },
-  SixrandomNewPage: { screen: SixrandomNewPage },
-  SixrandomFullInfoPage: { screen: SixrandomFullInfoPage },
+  starstoneHistoryPage: { screen: starstoneHistoryPage },
+  starstoneNewPage: { screen: starstoneNewPage },
+  starstoneFullInfoPage: { screen: starstoneFullInfoPage },
   EightrandomMainPage: { screen: EightrandomMainPage },
   EightrandomNewPage: { screen: EightrandomNewPage },
   EightrandomHistoryPage: { screen: EightrandomHistoryPage },
@@ -547,8 +547,8 @@ const RootStack = createStackNavigator(
     slogan: {
       screen: slogan,
     },
-    sixrandom: {
-      screen: sixrandom,
+    starstone: {
+      screen: starstone,
     },
   },
   {
@@ -575,7 +575,7 @@ const AppContainer = createAppContainer(RootStack);
 
 
 
-const SixrandomApp = () =>
+const starstoneApp = () =>
   <Provider >
     <MenuProvider>
       <AppContainer
@@ -588,8 +588,8 @@ const SixrandomApp = () =>
             // change the tracker here to use other Mobile analytics SDK.
             //console.log("onNavigationStateChange"," cur:",currentScreen," prev:",prevScreen);
             var eventfilter = ""
-            if (currentScreen == "SixrandomNewPage") {
-              //eventfilter = "SixrandomNewPage"
+            if (currentScreen == "starstoneNewPage") {
+              //eventfilter = "starstoneNewPage"
             }
             RouteConfig["ActiveCurPage"] = currentScreen
 
@@ -602,5 +602,5 @@ const SixrandomApp = () =>
     </MenuProvider>
   </Provider>
 
-AppRegistry.registerComponent('sixrandom', () => SixrandomApp);
+AppRegistry.registerComponent('starstone', () => starstoneApp);
 //console.log("getAppKeys",AppRegistry.getAppKeys())

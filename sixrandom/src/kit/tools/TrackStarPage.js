@@ -10,7 +10,7 @@ import ScreenConfig from '../../config/ScreenConfig';
 import WechatShare from '../../config/WechatShare'
 import shareimage from '../../config/shareimage'
 import { HistoryArrayGroup } from '../../config/StorageModule'
-import {SixrandomModule} from '../UniversechangesLib/SixrandomLib/SixrandomModule'
+import {starstoneModule} from '../UniversechangesLib/starstoneLib/starstoneModule'
 import TrackMagnetometer from './TrackMagnetometer'
 import {StyleConfig,FontStyleConfig} from '../../config/StyleConfig';
 var Gridh = ScreenConfig.__screenW()/3
@@ -840,7 +840,7 @@ class TrackStarPage extends React.Component {
     var curDate = new Date()
     curDate.setFullYear(this.state.curyear)
     curDate.setMonth(this.state.curmonth-1)
-    var r = SixrandomModule.lunar_f(curDate)
+    var r = starstoneModule.lunar_f(curDate)
     var curtrack =gettrackyear(r.lunarYear)
     var curflowyeartrack= getflowyear(r.lunarYear)
     var sanchuanarray1 = yeartrack[curtrack]

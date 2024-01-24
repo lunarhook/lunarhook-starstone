@@ -23,7 +23,7 @@ class SearchPage extends React.Component {
       rowTranslateAnimatedValues:[]
     };
     listsearch['EightrandomMainPage'] = "eightrandom"
-    listsearch['SixrandomFullInfoPage'] =  "sixrandom"
+    listsearch['starstoneFullInfoPage'] =  "starstone"
     listsearch['qimenMainPage'] =  "qimen"
     listsearch['taiyiMainPage'] = "taiyi"
     listsearch['SixCourseMainPage'] = "sixcourse"
@@ -61,7 +61,7 @@ class SearchPage extends React.Component {
     return new Promise(async(resolve, reject) => {
       await HistoryArrayGroup.SyncAllHistory()
       groupsearch['EightrandomMainPage'] =  HistoryArrayGroup.GetEightRandomHistory()
-      groupsearch['SixrandomFullInfoPage'] =  HistoryArrayGroup.GetSixrandomHistory()
+      groupsearch['starstoneFullInfoPage'] =  HistoryArrayGroup.GetstarstoneHistory()
       groupsearch['qimenMainPage'] =  HistoryArrayGroup.GetQimenHistory()
       groupsearch['taiyiMainPage'] =  HistoryArrayGroup.GetTaiyiHistory()
       groupsearch['SixCourseMainPage'] =  HistoryArrayGroup.GetSixCourseHistory()

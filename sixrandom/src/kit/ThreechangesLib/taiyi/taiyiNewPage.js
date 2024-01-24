@@ -7,7 +7,7 @@ import TabNavigator from '@lunarhook/react-native-tab-navigator';
 import { TextareaItem, DatePicker, List, Switch, WhiteSpace, PickerView, Provider } from '@ant-design/react-native';
 import { HistoryArrayGroup } from '../../../config/StorageModule'
 import ValueTypeModule from '../../../config/ValueTypeModule'
-import { SixrandomModule } from '../../UniversechangesLib/SixrandomLib/SixrandomModule'
+import { starstoneModule } from '../../UniversechangesLib/starstoneLib/starstoneModule'
 import RouteConfig from '../../../config/RouteConfig';
 import ScreenConfig from '../../../config/ScreenConfig';
 import { StyleConfig, FontStyleConfig } from '../../../config/StyleConfig';
@@ -160,12 +160,12 @@ class taiyiNewPage extends React.Component {
       if (this.state.switchleap == true) {
         isleap = true;
       }
-      var Json_ret = SixrandomModule.lunar2solar(myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate(), isleap)
+      var Json_ret = starstoneModule.lunar2solar(myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate(), isleap)
       console.log("solar2lunar", Json_ret, myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate())
       myDate = Json_ret
     }
 
-    var taiyiDate = SixrandomModule.lunar_f(myDate)
+    var taiyiDate = starstoneModule.lunar_f(myDate)
     console.log(taiyiDate)
     var index = (new Date()).valueOf().toString();
     var savedate = new Array()

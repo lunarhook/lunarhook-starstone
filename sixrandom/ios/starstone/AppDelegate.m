@@ -30,7 +30,7 @@ static void InitializeFlipper(UIApplication *application) {
 @interface AppDelegate()
   @property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTaskIdentifier;
 @end
-static NSString *const kBgTaskName = @"com.sixrandom.KeepBG";
+static NSString *const kBgTaskName = @"com.starstone.KeepBG";
 
 
 @implementation AppDelegate
@@ -73,7 +73,7 @@ NSString *const RCTJSNavigationScheme = @"react-js-navigation";
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"sixrandom"
+                                                   moduleName:@"starstone"
                                             initialProperties:nil];
 
   //rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
